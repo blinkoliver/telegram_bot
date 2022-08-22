@@ -22,13 +22,13 @@ func goDotEnvVariable(key string) string {
 
 func main() {
 	token := goDotEnvVariable("TELEGRAM_BOT_API_TOKEN")
-	fmt.Printf("godotenv : %s = %s \n", "STRONGEST_AVENGER", token)
 	bot, err := tgbotapi.NewBotAPI(token)
 	if err != nil {
 		fmt.Printf("panic")
 		panic(err)
 	}
 	bot.Debug = true
+	log.Printf("Authorized on account %s", bot.Self.UserName)
 
 	updateConfig := tgbotapi.NewUpdate(0)
 	updateConfig.Timeout = 30
@@ -37,10 +37,17 @@ func main() {
 		if update.Message == nil {
 			continue
 		}
-		msg := tgbotapi.NewMessage(update.Message.Chat.ID, update.Message.Text)
-		msg.ReplyToMessageID = update.Message.MessageID
-		if _, err := bot.Send(msg); err != nil {
-			panic(err)
+		if update.Message.Text == "/test" {
+			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "awesome, bot is working")
+			if _, err := bot.Send(msg); err != nil {
+				panic(err)
+			}
+		}
+		if update.Message.Text == "/send" {
+			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "send")
+			if _, err := bot.Send(msg); err != nil {
+				panic(err)
+			}
 		}
 	}
 }
