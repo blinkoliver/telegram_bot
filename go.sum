@@ -1,3 +1,5 @@
+github.com/fedesog/webdriver v0.0.0-20180606182539-99f36c92eaef h1:0z8rB8nAGEso7PhKS21wBjjxTp2uGPyZ6STzRc7mnBY=
+github.com/fedesog/webdriver v0.0.0-20180606182539-99f36c92eaef/go.mod h1:RUn/EmpfFIGHvmeXmh+hk1UaCbjOXa6vl7/kx1b6wxw=
 github.com/go-telegram-bot-api/telegram-bot-api/v5 v5.5.1 h1:wG8n/XJQ07TmjbITcGiUaOtXxdrINDz1b0J1w0SzqDc=
 github.com/go-telegram-bot-api/telegram-bot-api/v5 v5.5.1/go.mod h1:A2S0CWkNylc2phvKXWBBdD3K0iGnDBGbzRpISP2zBl8=
 github.com/joho/godotenv v1.4.0 h1:3l4+N6zfMWnkbPEXKng2o2/MR5mSwTrBih4ZEkkz1lg=
